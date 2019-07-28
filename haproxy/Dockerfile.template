@@ -1,0 +1,10 @@
+FROM troyfontaine/armhf-alpinelinux
+
+RUN apk add --no-cache haproxy \
+  && rm -rf /tmp/* /var/tmp/* \
+  && rm -rf ~/.cache/*
+
+COPY ./Dockerbin/haproxy.cfg /etc/haproxy/haproxy.cfg
+
+ENTRYPOINT ["/usr/sbin/haproxy", "-d", "-f", "/etc/haproxy/haproxy.cfg"]
+

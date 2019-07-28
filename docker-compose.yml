@@ -1,6 +1,7 @@
 version: '2'
 volumes:
     octoprint-data:
+    haproxy-data:
 services:
   octoprint:
     restart: always
@@ -9,3 +10,13 @@ services:
       - 'octoprint-data:/data'
     ports:
       - "5000:5000"
+  haproxy:
+    restart: always
+    build: ./haproxy
+    volumes:
+      - 'haproxy-data:/data'
+    ports:
+      - "80:80"
+    depends_on:
+      - octoprint
+
