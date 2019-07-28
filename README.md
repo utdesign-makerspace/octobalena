@@ -15,7 +15,7 @@ Currently the only thing that doesn't work is the camera module, since I'm just 
 
 # TODO
 
-- [] Build a webcam container
+- [ ] Build a webcam container
 
 
 ## Getting started
