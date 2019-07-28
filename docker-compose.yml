@@ -8,6 +8,8 @@ services:
     build: ./octoprint
     volumes:
       - 'octoprint-data:/data'
+    devices:
+      - "/dev/ttyACM0:/dev/ttyACM0"
     ports:
       - "5000:5000"
   haproxy:
