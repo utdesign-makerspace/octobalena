@@ -15,6 +15,8 @@ This is achieved with the Balena setup due to how optimized the BalenaOS hypervi
 
 Currently the only thing that doesn't work is the camera module, since I'm just getting started, I'll be working on getting that working first and foremost.
 
+![github-small](https://user-images.githubusercontent.com/26458780/62002962-6f7e9e80-b106-11e9-8d8e-60474ac8909d.png)
+
 # TODO
 
 - [ ] Build a webcam container
