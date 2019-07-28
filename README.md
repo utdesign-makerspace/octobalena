@@ -38,9 +38,15 @@ Apply the above settings in the "Fleet Configuration" panel (if applying it for 
 
 ## License
 
+Copyright 2019 Matthew Croughan. 
+
+Code produced after 2019 by Matthew Croughan is under GPLv2+
+
+<https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html>
+
 Copyright 2016 balenaio Ltd.
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+is Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
 <http://www.apache.org/licenses/LICENSE-2.0>
 
