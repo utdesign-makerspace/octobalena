@@ -1,0 +1,3 @@
+server:
+  commands:
+    serverRestartCommand: reboot
