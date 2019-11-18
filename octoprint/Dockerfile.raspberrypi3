@@ -9,8 +9,8 @@ RUN apk add --no-cache --virtual .build-deps \
     zlib-dev \
     jpeg-dev 
 
-# Install PyBonjour
-RUN pip install --no-cache-dir https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pybonjour/pybonjour-1.1.1.tar.gz
+# Install PyBonjour and Zeroconf
+RUN pip install --no-cache-dir https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pybonjour/pybonjour-1.1.1.tar.gz zeroconf
 
 COPY ./config.yaml /data/config.yaml
 
