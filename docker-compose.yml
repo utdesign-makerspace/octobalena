@@ -1,24 +1,16 @@
 version: '2'
 volumes:
     octoprint-data:
-    haproxy-data:
 services:
   octoprint:
-    restart: always
     build: ./octoprint
+    restart: always
     volumes:
       - 'octoprint-data:/data'
     devices:
-      - "/dev/ttyACM0:/dev/ttyACM0"
-    ports:
-      - "5000:5000"
-  haproxy:
-    restart: always
-    build: ./haproxy
-    volumes:
-      - 'haproxy-data:/data'
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    privileged: true
+    environment:
+      - UDEV=1
     ports:
       - "80:80"
-    depends_on:
-      - octoprint
-
