@@ -36,4 +36,4 @@ Variable Name | Value | Description | Default
 
 - This is in part based on excellent work done by the Balena.io team
 
-@see: https://github.com/balena-io-projects/balena-octoprint
+@see: https://github.com/balena-io-playground/balena-octoprint
