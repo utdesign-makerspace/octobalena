@@ -7,10 +7,15 @@ services:
     restart: always
     volumes:
       - 'octoprint-data:/data'
-    devices:
-      - "/dev/ttyUSB0:/dev/ttyUSB0"
     privileged: true
-    environment:
-      - UDEV=1
     ports:
       - "80:80"
+  octoscreen:
+    restart: always
+    build: ./octoscreen
+    privileged: true
+    environment:
+     - UDEV=1
+    depends_on:
+     - octoprint
+
