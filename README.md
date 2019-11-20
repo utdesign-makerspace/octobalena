@@ -1,10 +1,10 @@
-<h1 align="center"> OctoBalena</h1><br>
+<h1 align="center"> Octobalena</h1><br>
   <p align="center" >
   <img align="center" src="https://user-images.githubusercontent.com/26458780/69140128-cba46e80-0ab9-11ea-8980-075f71039643.png">
   <br><br>
 </p>
 
-Remotely control your 3d-printer with [octoprint](https://github.com/foosel/OctoPrint) and balena.io !
+Remotely control your 3d-printer with [octoprint](https://github.com/foosel/OctoPrint) + [octoscreen](https://github.com/Z-Bolt/OctoScreen/) via balena.io !
 
 **octoprint can be exposed on port 80 which can be remotely accessible via balena.io [public URL](https://docs.balena.io/management/devices/#enable-public-device-url) feature**
 
