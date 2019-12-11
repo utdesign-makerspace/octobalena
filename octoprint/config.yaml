@@ -5,3 +5,7 @@ webcam:
   stream: /webcam/?action=stream
   snapshot: http://127.0.0.1:8080/?action=snapshot
   ffmpeg: /usr/bin/ffmpeg
+serial:                                                                                                                                 
+  autoconnect: true                                                                                                                     
+  baudrate: 0                                                                                                                           
+  port: AUTO

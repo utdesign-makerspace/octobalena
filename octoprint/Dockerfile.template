@@ -1,1 +1,0 @@
-FROM --platform=linux/arm nunofgs/octoprint:master-alpine

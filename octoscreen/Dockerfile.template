@@ -2,9 +2,8 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster-run
 
 RUN install_packages wget libgtk-3-0 xserver-xorg xinit x11-xserver-utils
 
-RUN wget https://github.com/Z-Bolt/OctoScreen/releases/download/v2.3.6/octoscreen_2.3-6_armhf.deb \
-  && dpkg -r octoscreen \
-  && dpkg -i octoscreen_2.3-6_armhf.deb
+RUN wget https://github.com/MatthewCroughan/octobalena/releases/download/workaround/octoscreen_2.4-9_armhf_no_autoconnect.deb \
+  && dpkg -i octoscreen_2.4-9_armhf_no_autoconnect.deb
 
 ENV OCTOPRINT_HOST=http://octoprint:80
 ENV OCTOSCREEN_STYLE_PATH=/opt/octoscreen/styles/z-bolt/
