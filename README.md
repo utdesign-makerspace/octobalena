@@ -23,6 +23,11 @@ Variable Name | Value | Description | Default
 **`OCTOPRINT_APIKEY`** | `STRING` | Needed for OctoScreen to interact with Octoprint | 
 **`OCTOSCREEN_RESOLUTION`** | `width x height` | Resolution to start OctoScreen at. Optimal resolution is no less than 800x480.  | 800x400
 
+## Octodetect Service Variables
+Variable Name | Value | Description | Default
+------------ | ------------- | ------------- | -------------
+**`OCTOPRINT_APIKEY`** | `STRING` | Needed for Octodetect to autoconnect with Octoprint | 
+
 ## Getting started
 
 - Sign up on [balena.io](https://dashboard.balena.io/signup)
