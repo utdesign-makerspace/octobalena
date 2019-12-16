@@ -58,4 +58,4 @@ function init()
 }
 
 start_udev
-init "$@"
+supervisord -c /etc/supervisor/supervisord.conf
