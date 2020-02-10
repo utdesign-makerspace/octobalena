@@ -10,12 +10,12 @@ services:
     privileged: true
     ports:
       - "80:80"
-  octodetect:
-    build: ./octodetect
-    restart: always
-    privileged: true
-    depends_on:
-      - octoprint
+#  octodetect:
+#    build: ./octodetect
+#    restart: always
+#    privileged: true
+#    depends_on:
+#      - octoprint
   octoscreen:
     restart: always
     build: ./octoscreen
