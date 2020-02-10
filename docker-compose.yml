@@ -16,9 +16,9 @@ services:
 #    privileged: true
 #    depends_on:
 #      - octoprint
-  octoscreen:
+  octodash:
     restart: always
-    build: ./octoscreen
+    build: ./octodash
     privileged: true
     environment:
      - UDEV=1

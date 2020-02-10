@@ -1,0 +1,59 @@
+{
+	"config": {
+		"octoprint": {
+			"url": "http://octoprint:80/api/",
+			"accessToken": null,
+			"apiInterval": 1500
+		},
+		"printer": {
+			"name": "Matt's-Ender3",
+			"xySpeed": 150,
+			"zSpeed": 5
+		},
+		"filament": {
+			"thickness": 1.75,
+			"density": 1.25
+		},
+		"octodash": {
+			"touchscreen": true,
+			"temperatureSensor": {
+				"ambient": null,
+				"filament1": null,
+				"filament2": null
+			},
+			"customActions": [
+				{
+					"icon": "home",
+					"command": "G28",
+					"color": "#dcdde1"
+				},
+				{
+					"icon": "ruler-vertical",
+					"command": "G29",
+					"color": "#44bd32"
+				},
+				{
+					"icon": "fire-alt",
+					"command": "M140 S50; M104 S185",
+					"color": "#e1b12c"
+				},
+				{
+					"icon": "snowflake",
+					"command": "M140 S0; M104 S0",
+					"color": "#0097e6"
+				},
+				{
+					"icon": "redo-alt",
+					"command": "[!RELOAD]",
+					"color": "#7f8fa6"
+				},
+				{
+					"icon": "skull",
+					"command": "[!KILL]",
+					"color": "#e84118"
+				}
+			],
+			"turnScreenOffSleep": false
+		}
+	}
+}
