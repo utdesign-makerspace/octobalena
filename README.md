@@ -4,7 +4,7 @@
   <br><br>
 </p>
 
-Remotely control your 3d-printer with [octoprint](https://github.com/foosel/OctoPrint) + [octoscreen](https://github.com/Z-Bolt/OctoScreen/) via balena.io !
+Remotely control your 3d-printer with [octoprint](https://github.com/foosel/OctoPrint) + [octodash](https://github.com/UnchartedBull/OctoDash) via balena.io !
 
 **octoprint can be exposed on port 80 which can be remotely accessible via balena.io [public URL](https://docs.balena.io/management/devices/#enable-public-device-url) feature**
 
@@ -17,16 +17,10 @@ Variable Name | Value | Description | Default
 **`MJPEG_STREAMER_AUTOSTART 	`** | `BOOLEAN` | Start the camera automatically  | true
 **`MJPEG_STREAMER_INPUT`** | `STRING` | Flags to pass to mjpg_streamer | -y -n -r 640x480
 
-## Octoscreen Service Variables
+## Octodash Service Variables
 Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
-**`OCTOPRINT_APIKEY`** | `STRING` | Needed for OctoScreen to interact with Octoprint | 
-**`OCTOSCREEN_RESOLUTION`** | `width x height` | Resolution to start OctoScreen at. Optimal resolution is no less than 800x480.  | 800x400
-
-## Octodetect Service Variables
-Variable Name | Value | Description | Default
------------- | ------------- | ------------- | -------------
-**`OCTOPRINT_APIKEY`** | `STRING` | Needed for Octodetect to autoconnect with Octoprint | 
+**`OCTOPRINT_APIKEY`** | `STRING` | Needed for OctoDash to interact with Octoprint | 
 
 ## Getting started
 
