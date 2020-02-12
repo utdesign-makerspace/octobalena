@@ -6,7 +6,7 @@
 			"apiInterval": 1500
 		},
 		"printer": {
-			"name": "Matt's-Ender3",
+			"name": null,
 			"xySpeed": 150,
 			"zSpeed": 5
 		},
