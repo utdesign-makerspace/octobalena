@@ -16,6 +16,9 @@ Variable Name | Value | Description | Default
 **`CAMERA_DEV`** | `STRING` | The camera device node | /dev/video0
 **`MJPEG_STREAMER_AUTOSTART 	`** | `BOOLEAN` | Start the camera automatically  | true
 **`MJPEG_STREAMER_INPUT`** | `STRING` | Flags to pass to mjpg_streamer | -y -n -r 640x480
+**`MQTT_BROKER`** | `STRING` | Ip address of mqtt broker to use | 
+**`MQTT_BROKER_PORT`** | `STRING` | Port the mqtt broker is running on | 
+**`ESPURNA_RELAY_NAME`** | `STRING` | Relay name (hostname) used by espurna at the root of topic. E.G ESPURNA-123456, [see documentation](https://github.com/xoseperez/espurna/wiki/Configuration#direct-http-settings-api)  | 
 
 ## Octodash Service Variables
 Variable Name | Value | Description | Default
