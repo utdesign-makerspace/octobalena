@@ -17,6 +17,12 @@ FILE="$HOME/.config/octodash/config.json"
 TMP=$(mktemp)
 jq ".config.octoprint.accessToken |= \"$OCTOPRINT_APIKEY\"" < $FILE > $TMP && mv $TMP $FILE
 
+if [[ -n "$PRINTER_NAME" ]]; then
+  jq ".config.printer.name |= Octobalena" < $FILE > $TMP && mv $TMP $FILE
+else
+  jq ".config.printer.name |= \"$PRINTER_NAME\"" < $FILE > $TMP && mv $TMP $FILE
+fi
+
 # By default docker gives us 64MB of shared memory size but to display heavy
 # pages we need more.
 ## BASED ON:
