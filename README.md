@@ -21,6 +21,7 @@ Variable Name | Value | Description | Default
 Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`OCTOPRINT_APIKEY`** | `STRING` | Needed for OctoDash to interact with Octoprint | 
+**`PRINTER_NAME`** | `STRING` | Name of the printer, as shows up in the bottom left of OctoDash  | Octobalena
 
 ## Getting started
 
