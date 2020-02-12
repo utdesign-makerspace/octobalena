@@ -2,6 +2,7 @@
 # Build stage
 ##
 FROM balenalib/%%BALENA_MACHINE_NAME%%-node:latest-build as build
+ARG octodash_version=7570c46a22e15635329b06879cfe934599599064
 RUN echo "arch=$(uname -m)" > ~/.npmrc
 
 # Move to app dir
@@ -30,10 +31,10 @@ RUN install_packages \
   libexpat-dev \
   git
 
-# Clone project to filesystem and remove git index to save space 
-RUN git clone https://github.com/UnchartedBull/OctoDash.git && rm -rf OctoDash/.git
+# Clone project to filesystem, checkout octodash_version and remove git index to save space 
+RUN git clone https://github.com/UnchartedBull/OctoDash.git && cd OctoDash && git checkout $octodash_verion && rm -rf .git
 
-# Install npm modules for the application
+# Install npm modules for the application and compile
 RUN cd OctoDash && npm install && npm run ng:build
 
 ###
