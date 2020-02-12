@@ -17,6 +17,10 @@ FILE="$HOME/.config/octodash/config.json"
 TMP=$(mktemp)
 jq ".config.octoprint.accessToken |= \"$OCTOPRINT_APIKEY\"" < $FILE > $TMP && mv $TMP $FILE
 
+
+# This takes the PRINTER_NAME specified on the balena dashboard and does the same processing that we do with the OCTOPRINT_APIKEY.
+# However, it sets a default of Octobalena if one is not provided.
+
 if [[ -n "$PRINTER_NAME" ]]; then
   jq ".config.printer.name |= Octobalena" < $FILE > $TMP && mv $TMP $FILE
 else
