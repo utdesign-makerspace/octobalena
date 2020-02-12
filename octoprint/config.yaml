@@ -1,6 +1,6 @@
 server:
   commands:
-    serverRestartCommand: reboot
+    serverRestartCommand: killall -15 supervisord
 webcam:
   stream: /webcam/?action=stream
   snapshot: http://127.0.0.1:8080/?action=snapshot
@@ -13,6 +13,14 @@ plugins:
     showOnBrowserTitle: false
     showOnNavBar: false
     showOnPrinterDisplay: false
+  mqtt:
+    broker:
+      url:
+  psucontrol:
+    _config_version: 3
+    disconnectOnPowerOff: true
+    offSysCommand: python /data/mqtt_espurna_control.py off
+    onSysCommand: python /data/mqtt_espurna_control.py on
 serial:                                                                                                                                 
   autoconnect: true                                                                                                                     
   baudrate: 0                                                                                                                           
