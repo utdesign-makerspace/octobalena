@@ -22,7 +22,7 @@ jq ".config.octoprint.accessToken |= \"$OCTOPRINT_APIKEY\"" < $FILE > $TMP && mv
 # However, it sets a default of Octobalena if one is not provided.
 
 if [[ -z "$PRINTER_NAME" ]]; then
-  jq ".config.printer.name |= Octobalena" < $FILE > $TMP && mv $TMP $FILE
+  jq ".config.printer.name |= \"Octobalena\"" < $FILE > $TMP && mv $TMP $FILE
 else
   jq ".config.printer.name |= \"$PRINTER_NAME\"" < $FILE > $TMP && mv $TMP $FILE
 fi
