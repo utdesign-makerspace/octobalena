@@ -21,8 +21,8 @@ jq ".config.octoprint.accessToken |= \"$OCTOPRINT_APIKEY\"" < $FILE > $TMP && mv
 # This takes the PRINTER_NAME specified on the balena dashboard and does the same processing that we do with the OCTOPRINT_APIKEY.
 # However, it sets a default of Octobalena if one is not provided.
 
-if [[ -n "$PRINTER_NAME" ]]; then
-  jq ".config.printer.name |= Octobalena" < $FILE > $TMP && mv $TMP $FILE
+if [[ -z "$PRINTER_NAME" ]]; then
+  jq ".config.printer.name |= \"Octobalena\"" < $FILE > $TMP && mv $TMP $FILE
 else
   jq ".config.printer.name |= \"$PRINTER_NAME\"" < $FILE > $TMP && mv $TMP $FILE
 fi
