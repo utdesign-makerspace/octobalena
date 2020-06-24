@@ -42,5 +42,5 @@ umount /dev/shm && mount -t tmpfs shm /dev/shm
 ## https://github.com/balena-io/resin-electronjs/blob/master/app/start.sh
 
 rm /tmp/.X0-lock &>/dev/null || true
-startx /usr/src/app/OctoDash/node_modules/electron/dist/electron /usr/src/app/OctoDash --enable-logging --no-sandbox
+startx /opt/OctoDash/octodash --enable-logging --no-sandbox
 
