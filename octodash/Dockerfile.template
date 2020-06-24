@@ -32,7 +32,7 @@ RUN install_packages \
   git
 
 # Clone project to filesystem, checkout octodash_version and remove git index to save space 
-RUN git clone https://github.com/UnchartedBull/OctoDash.git && cd OctoDash && git checkout $octodash_verion && rm -rf .git
+RUN git clone https://github.com/UnchartedBull/OctoDash.git && cd OctoDash && git checkout $octodash_version && rm -rf .git
 
 # Install npm modules for the application and compile
 RUN cd OctoDash && npm install && npm run ng:build
