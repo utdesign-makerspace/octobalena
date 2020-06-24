@@ -1,5 +1,7 @@
 # Notes
 
+`.binary` and `.build` in my Dockerfile lingo is referring to the fact that Dockerfile.build builds from source, whereas `Dockerfile.binary` is getting the package as a binary then installing it into the system in some manner.
+
 `setapikey.py` is a pythonic way of setting the OCTOPRINT_APIKEY should that be preferable to develop with or for. Mostly I just wrote it as a first method and would like to keep it around for future reference.
 
 In `start.sh` I currently opt to use [jq](https://stedolan.github.io/jq/), a sed-like json processor as follows:
