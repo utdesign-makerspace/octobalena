@@ -41,6 +41,14 @@ You can deploy this project to a new balenaCloud application in one click using 
 
 [![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy)
 
+### Via Balena-Cli
+
+- Sign up on [balena.io](https://dashboard.balena.io/signup)
+- go through the [getting started guide](https://balena.io/docs/learn/getting-started) and create a new application
+- clone this repository to your local workspace
+- Using [Balena CLI](https://www.balena.io/docs/reference/cli/), push the code with `balena push <application-name>`
+- See the magic happening, your device is getting updated 🌟Over-The-Air🌟!
+
 ### Via Git
 
 - Sign up on [balena.io](https://dashboard.balena.io/signup)
