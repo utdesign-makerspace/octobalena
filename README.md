@@ -18,7 +18,7 @@ You can deploy this project to a new balenaCloud application in one click using 
 
 [![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy)
 
-### Via Balena-Cli
+### Via [Balena-Cli](https://www.balena.io/docs/reference/balena-cli/)
 
 - Sign up on [balena.io](https://dashboard.balena.io/signup)
 - go through the [getting started guide](https://balena.io/docs/learn/getting-started) and create a new application
