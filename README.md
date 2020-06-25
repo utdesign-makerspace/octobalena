@@ -26,6 +26,11 @@ Variable Name | Value | Description | Default
 **`OCTOPRINT_APIKEY`** | `STRING` | Needed for OctoDash to interact with Octoprint | 
 **`PRINTER_NAME`** | `STRING` | Name of the printer, as shows up in the bottom left of OctoDash  | Octobalena
 
+## mdns-publisher Service Variables
+Variable Name | Value | Description | Default
+------------ | ------------- | ------------- | -------------
+**`OCTOPRINT_HOSTNAME`** | `STRING` | Adds CNAME for mDNS so device is reachable at string.local | octobalena
+
 ## Getting started
 
 - Sign up on [balena.io](https://dashboard.balena.io/signup)
