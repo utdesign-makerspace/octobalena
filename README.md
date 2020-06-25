@@ -52,7 +52,7 @@ You can deploy this project to a new balenaCloud application in one click using 
 ### Via Git
 
 - Sign up on [balena.io](https://dashboard.balena.io/signup)
-- go through the [getting started guide](http://docs.balena.io/raspberrypi/nodejs/getting-started/) and create a new application
+- go through the [getting started guide](https://balena.io/docs/learn/getting-started) and create a new application
 - clone this repository to your local workspace
 - add the _balena remote_ to your local workspace using the useful shortcut in the dashboard UI
 - `git push balena master`
