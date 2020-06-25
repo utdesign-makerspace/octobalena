@@ -8,6 +8,8 @@ Remotely control your 3d-printer with [octoprint](https://github.com/foosel/Octo
 
 **octoprint can be exposed on port 80 which can be remotely accessible via balena.io [public URL](https://docs.balena.io/management/devices/#enable-public-device-url) feature**
 
+By default, the device can be reached at `octobalena.local` if mDNS is working on your device.
+
 # Configure via [environment variables](https://docs.resin.io/management/env-vars/)
 
 ## Octoprint Service Variables
@@ -25,6 +27,11 @@ Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`OCTOPRINT_APIKEY`** | `STRING` | Needed for OctoDash to interact with Octoprint | 
 **`PRINTER_NAME`** | `STRING` | Name of the printer, as shows up in the bottom left of OctoDash  | Octobalena
+
+## mdns-publisher Service Variables
+Variable Name | Value | Description | Default
+------------ | ------------- | ------------- | -------------
+**`OCTOPRINT_HOSTNAME`** | `STRING` | Adds CNAME for mDNS so device is reachable at string.local | octobalena
 
 ## Getting started
 
