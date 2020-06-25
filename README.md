@@ -10,6 +10,31 @@ Remotely control your 3d-printer with [octoprint](https://github.com/foosel/Octo
 
 By default, the device can be reached at `octobalena.local` if mDNS is working on your device.
 
+## Getting started
+
+### Via Balena Deploy
+
+You can deploy this project to a new balenaCloud application in one click using the button below:
+
+[![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy)
+
+### Via Balena-Cli
+
+- Sign up on [balena.io](https://dashboard.balena.io/signup)
+- go through the [getting started guide](https://balena.io/docs/learn/getting-started) and create a new application
+- clone this repository to your local workspace
+- Using [Balena CLI](https://www.balena.io/docs/reference/cli/), push the code with `balena push <application-name>`
+- See the magic happening, your device is getting updated 🌟Over-The-Air🌟!
+
+### Via Git
+
+- Sign up on [balena.io](https://dashboard.balena.io/signup)
+- go through the [getting started guide](https://balena.io/docs/learn/getting-started) and create a new application
+- clone this repository to your local workspace
+- add the _balena remote_ to your local workspace using the useful shortcut in the dashboard UI
+- `git push balena master`
+- see the magic happening, your device is getting updated Over-The-Air!
+
 # Configure via [environment variables](https://docs.resin.io/management/env-vars/)
 
 ## Octoprint Service Variables
@@ -32,31 +57,6 @@ Variable Name | Value | Description | Default
 Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`OCTOPRINT_HOSTNAME`** | `STRING` | Adds CNAME for mDNS so device is reachable at string.local | octobalena
-
-## Getting started
-
-### Via Balena Deploy
-
-You can deploy this project to a new balenaCloud application in one click using the button below: 
-
-[![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy)
-
-### Via Balena-Cli
-
-- Sign up on [balena.io](https://dashboard.balena.io/signup)
-- go through the [getting started guide](https://balena.io/docs/learn/getting-started) and create a new application
-- clone this repository to your local workspace
-- Using [Balena CLI](https://www.balena.io/docs/reference/cli/), push the code with `balena push <application-name>`
-- See the magic happening, your device is getting updated 🌟Over-The-Air🌟!
-
-### Via Git
-
-- Sign up on [balena.io](https://dashboard.balena.io/signup)
-- go through the [getting started guide](https://balena.io/docs/learn/getting-started) and create a new application
-- clone this repository to your local workspace
-- add the _balena remote_ to your local workspace using the useful shortcut in the dashboard UI
-- `git push balena master`
-- see the magic happening, your device is getting updated Over-The-Air!
 
 ## Attribution
 
