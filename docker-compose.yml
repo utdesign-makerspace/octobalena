@@ -1,6 +1,7 @@
 version: '2'
 volumes:
-    octoprint-data:
+  octoprint-data: {}
+  traefik: {}
 services:
   octoprint:
     build: ./octoprint
@@ -9,13 +10,26 @@ services:
       - 'octoprint-data:/data'
     privileged: true
     ports:
-      - "80:80"
-#  octodetect:
-#    build: ./octodetect
-#    restart: always
-#    privileged: true
-#    depends_on:
-#      - octoprint
+      - '5000:5000'
+    labels:
+      io.balena.features.supervisor-api: '1'
+      traefik.enable: 'true'
+      traefik.http.services.octoprint.loadbalancer.server.port: '5000'  
+
+      traefik.http.routers.octoprint-balena.rule: 'HostRegexp(`{subdomain:[a-zA-Z0-9\-]+}.balena-devices.com`)'
+      traefik.http.routers.octoprint-balena.entrypoints: 'web'
+      traefik.http.routers.octoprint-balena.tls: 'false'   
+
+      traefik.http.routers.octoprint.rule: 'HostRegexp(`{subdomain:[a-zA-Z0-9\-]+}.local`) || HostRegexp(`{subdomain:[a-zA-Z0-9\-]+}.localdomain`) || HostRegexp(`{subdomain:[a-zA-Z0-9\-]+}.lan`)'
+      traefik.http.routers.octoprint.entrypoints: 'websecure'
+      traefik.http.routers.octoprint.tls: 'true'
+
+      traefik.http.routers.octoprint-insecure.rule: 'HostRegexp(`{subdomain:[a-zA-Z0-9\-]+}.local`) || HostRegexp(`{subdomain:[a-zA-Z0-9\-]+}.localdomain`) || HostRegexp(`{subdomain:[a-zA-Z0-9\-]+}.lan`)'
+      traefik.http.routers.octoprint-insecure.entrypoints: 'web'
+      traefik.http.routers.octoprint-insecure.middlewares: 'redirect-to-https'
+
+      traefik.http.middlewares.redirect-to-https.redirectscheme.scheme: 'https'
+      traefik.http.middlewares.redirect-to-https.redirectscheme.permanent: 'true'
   octodash:
     restart: always
     build: ./octodash
@@ -24,4 +38,28 @@ services:
      - UDEV=1
     depends_on:
      - octoprint
-
+  traefik:
+    restart: always
+    build: ./traefik
+    ports:
+      - '80:80/tcp'
+      - '443:443/tcp'
+      - '8080:8080'
+    volumes:
+      - 'traefik:/etc/traefik'
+    environment:
+      TRAEFIK_LOG_LEVEL: 'INFO'
+      TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS: ':443'
+      TRAEFIK_ENTRYPOINTS_WEB_ADDRESS: ':80'
+      TRAEFIK_PROVIDERS_DOCKER: 'true'
+      TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT: 'false'
+      TRAEFIK_PROVIDERS_DOCKER_ENDPOINT: 'unix:///var/run/balena.sock'
+      TRAEFIK_API_INSECURE: 'true'
+    labels:
+      io.balena.features.balena-socket: 'true'
+  mdns-publisher:
+    build: ./mdns-publisher
+    environment:
+      DBUS_SYSTEM_BUS_ADDRESS: 'unix:path=/host/run/dbus/system_bus_socket'
+    labels:
+      io.balena.features.dbus: '1'
