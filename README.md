@@ -12,7 +12,7 @@ By default, the device can be reached at `octobalena.local` if mDNS is working o
 
 ## Getting started
 
-### Via Balena Deploy
+### Via [Balena Deploy](https://www.balena.io/docs/learn/deploy/deploy-with-balena-button/)
 
 You can deploy this project to a new balenaCloud application in one click using the button below:
 
