@@ -35,6 +35,14 @@ Variable Name | Value | Description | Default
 
 ## Getting started
 
+### Via Balena Deploy
+
+You can deploy this project to a new balenaCloud application in one click using the button below: 
+
+[![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy)
+
+### Via Git
+
 - Sign up on [balena.io](https://dashboard.balena.io/signup)
 - go through the [getting started guide](http://docs.balena.io/raspberrypi/nodejs/getting-started/) and create a new application
 - clone this repository to your local workspace
