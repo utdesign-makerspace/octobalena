@@ -60,6 +60,24 @@ Variable Name | Value | Description | Default
 
 ## Attribution
 
-- This is in part based on excellent work done by the Balena.io team
+# **Octoprint by [Foosel](https://github.com/foosel/)**
 
-@see: https://github.com/balena-io-playground/balena-octoprint
+https://github.com/OctoPrint/OctoPrint
+
+[GNU Affero General Public License V3](https://www.gnu.org/licenses/agpl-3.0.html)
+
+OctoPrint provides a snappy web interface for controlling consumer 3D printers.
+
+# **OctoDash by [UnchartedBull](https://github.com/UnchartedBull)**
+
+https://github.com/UnchartedBull/OctoDash
+
+[Apache 2.0](https://github.com/UnchartedBull/OctoDash/blob/master/LICENSE.md)
+
+OctoDash is a User Interface for OctoPrint, it utilizes the OctoPrint API but tries to use modern design principles in order to fully enable the power of your Raspberry Pi attached to your 3D Printer. OctoDash works best with a Touchscreen and will support almost all functions that OctoPrint offers just in a nicer format. Give it a try! 
+
+# Balena-io-playground
+
+This project is in part based on excellent work done by the Balena.io team
+
+https://github.com/balena-io-playground/balena-octoprint
