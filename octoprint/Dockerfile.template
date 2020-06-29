@@ -29,6 +29,9 @@ RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
     "https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/master.zip"
     
 
+RUN apk add --no-cache curl jq
+COPY update-balena-app.sh /update-balena-app.sh
+
 # Seed the initial config.yaml
 COPY ./config.yaml /data/config.yaml
 
