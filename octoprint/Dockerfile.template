@@ -31,13 +31,13 @@ RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
 # Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically  
 # https://github.com/MatthewCroughan/octobalena/pull/10    
 RUN apk add --no-cache curl jq
-COPY update-balena-app.sh /update-balena-app.sh
+COPY update-balena-app.sh /usr/src/octobalena/update-balena-app.sh
 
 # Seed the initial config.yaml
 COPY ./config.yaml /data/config.yaml
 
 # Copy in the script that allows us to interface with espurna relays over mqtt
-COPY ./mqtt_espurna_control.py /data/mqtt_espurna_control.py
+COPY ./mqtt_espurna_control.py /usr/src/octobalena/mqtt_espurna_control.py
 
 COPY ./supervisord.conf /etc/supervisor/supervisord.conf
 COPY ./udevd.sh /app/udevd.sh
