@@ -13,6 +13,7 @@ services:
       - '5000:5000'
     labels:
       io.balena.features.supervisor-api: '1'
+      io.balena.features.balena-api: '1'
       traefik.enable: 'true'
       traefik.http.services.octoprint.loadbalancer.server.port: '5000'  
 

@@ -27,7 +27,11 @@ RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
     "https://github.com/jneilliii/OctoPrint-UltimakerFormatPackage/archive/master.zip" \
     "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails/archive/master.zip" \
     "https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/master.zip"
-    
+
+# Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically  
+# https://github.com/MatthewCroughan/octobalena/pull/10    
+RUN apk add --no-cache curl jq
+COPY update-balena-app.sh /update-balena-app.sh
 
 # Seed the initial config.yaml
 COPY ./config.yaml /data/config.yaml
