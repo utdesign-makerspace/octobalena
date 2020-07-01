@@ -19,8 +19,8 @@ plugins:
   psucontrol:
     _config_version: 3
     disconnectOnPowerOff: true
-    offSysCommand: python /data/mqtt_espurna_control.py off
-    onSysCommand: python /data/mqtt_espurna_control.py on
+    offSysCommand: python /usr/src/octobalena/mqtt_espurna_control.py off
+    onSysCommand: python /usr/src/octobalena/mqtt_espurna_control.py on
 serial:                                                                                                                                 
   autoconnect: true                                                                                                                     
   baudrate: 0                                                                                                                           
