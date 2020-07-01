@@ -43,7 +43,7 @@
             },
             "psuControl": {
                 "enabled": true,
-                "turnOnPSUWhenExitingSleep": false
+                "turnOnPSUWhenExitingSleep": true
             }
         },
         "octodash": {
