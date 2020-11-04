@@ -1,8 +1,10 @@
 FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
 
-ARG VERSION=1.5.0
+ARG VERSION=2.1.1
+ARG ARCH
 
 RUN install_packages \
+  wget \
   xserver-xorg-core \
   xserver-xorg-input-all \
   xserver-xorg-video-fbdev \
@@ -21,8 +23,9 @@ WORKDIR /usr/src/app
 COPY ./start.sh ./start.sh
 COPY config.json /root/.config/octodash/config.json
 
-RUN curl -sL https://github.com/UnchartedBull/OctoDash/releases/download/v""$VERSION""/octodash_""$VERSION""_$(uname -m).deb -o octodash.deb && \
-    dpkg -i --ignore-depends=libnotify4,xdg-utils,libappindicator3-1,libsecret-1-0 octodash.deb && \
-    rm octodash.deb
+RUN case %%BALENA_ARCH%% in x86_64) ARCH="amd64" ;; aarch64) ARCH="arm64" ;; armv7l) ARCH="armv7l" ;; esac && \
+  wget -qO octodash.deb "https://github.com/UnchartedBull/OctoDash/releases/download/v${VERSION}/octodash_${VERSION}_${ARCH}.deb" && \
+  dpkg -i --ignore-depends=libnotify4,xdg-utils,libappindicator3-1,libsecret-1-0 octodash.deb && \
+  rm -Rf octodash.deb
 
 CMD ["bash","/usr/src/app/start.sh"]

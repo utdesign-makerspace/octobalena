@@ -2,7 +2,7 @@
 # Build stage
 ##
 FROM balenalib/%%BALENA_MACHINE_NAME%%-node:latest-build as build
-ARG octodash_version=v1.5.0
+ARG octodash_version=v2.1.1
 RUN echo "arch=$(uname -m)" > ~/.npmrc
 
 # Move to app dir
