@@ -23,7 +23,7 @@ WORKDIR /usr/src/app
 COPY ./start.sh ./start.sh
 COPY config.json /root/.config/octodash/config.json
 
-RUN case %%BALENA_ARCH%% in x86_64) ARCH="amd64" ;; aarch64) ARCH="arm64" ;; armv7l) ARCH="armv7l" ;; esac && \
+RUN case %%BALENA_ARCH%% in x86_64) ARCH="amd64" ;; aarch64) ARCH="arm64" ;; armv7hf) ARCH="armv7l" ;; esac && \
   wget -qO octodash.deb "https://github.com/UnchartedBull/OctoDash/releases/download/v${VERSION}/octodash_${VERSION}_${ARCH}.deb" && \
   dpkg -i --ignore-depends=libnotify4,xdg-utils,libappindicator3-1,libsecret-1-0 octodash.deb && \
   rm -Rf octodash.deb
