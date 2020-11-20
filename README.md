@@ -16,7 +16,7 @@ By default, the device can be reached at `octobalena.local` if mDNS is working o
 
 You can deploy this project to a new balenaCloud application in one click using the button below:
 
-[![](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy)
+[![balena deploy button](https://www.balena.io/deploy.png)](https://dashboard.balena-cloud.com/deploy?repoUrl=https://github.com/MatthewCroughan/octobalena/)
 
 ### Via [Balena-Cli](https://www.balena.io/docs/reference/balena-cli/)
 
