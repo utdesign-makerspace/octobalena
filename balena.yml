@@ -1,0 +1,15 @@
+version: "2"
+slug: "octobalena"
+name: "Octobalena"
+type: "sw.application"
+assets:
+  - url: "https://github.com/MatthewCroughan/octobalena"
+    name: "repository"
+  - url: "https://user-images.githubusercontent.com/26458780/69140128-cba46e80-0ab9-11ea-8980-075f71039643.png"
+    name: "logo"
+data:
+  description: "Remotely control your 3D printer with octoprint, octodash, and balena."
+  applicationEnvironmentVariables:
+  defaultDeviceType: "raspberrypi3"
+  supportedDeviceTypes:
+    - "raspberrypi3"
