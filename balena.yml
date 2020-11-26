@@ -13,3 +13,4 @@ data:
   defaultDeviceType: "raspberrypi3"
   supportedDeviceTypes:
     - "raspberrypi3"
+    - "fincm3"
