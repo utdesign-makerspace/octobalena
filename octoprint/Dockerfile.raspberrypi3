@@ -4,6 +4,12 @@ FROM --platform=linux/arm/v7 nunofgs/octoprint:master-alpine
 RUN apk update && apk add --no-cache avahi-compat-libdns_sd raspberrypi && \
     ln -s /opt/vc/bin/* /usr/bin/
 
+# Update OctoPrint
+RUN apk add --no-cache gcc linux-headers
+RUN PYTHONUSERBASE=/usr/local pip uninstall -y octoprint OctoPrint
+RUN rm -Rf /usr/local/lib/python2.7/site-packages/OctoPrint-*
+RUN PYTHONUSERBASE=/usr/local pip install OctoPrint
+
 # Install build deps for various plugins, Octolapse for example. Should find a way for these to be conditionally installed in the Future.
 RUN apk add --no-cache --virtual .build-deps \
     zlib-dev \
@@ -17,7 +23,7 @@ RUN apk update && apk add --no-cache eudev
 # OctoDash requirements, it is stated these plugins are mandatory on the project wiki:
 # https://github.com/UnchartedBull/OctoDash/wiki/Installation#automatic-installation
 
-RUN PYTHONUSERBASE=/usr/local/ pip install --no-cache-dir \
+RUN PYTHONUSERBASE=/usr/local pip install --no-cache-dir \
     "https://github.com/marian42/octoprint-preheat/archive/master.zip" \
     "https://github.com/OllisGit/OctoPrint-DisplayLayerProgress/releases/latest/download/master.zip" \
     "https://github.com/kantlivelong/OctoPrint-PSUControl/archive/master.zip" \
