@@ -34,7 +34,8 @@ RUN PYTHONUSERBASE=/usr/local pip install --no-cache-dir \ "https://github.com/m
     "https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/master.zip" \ 
     "https://framagit.org/razer/Octoprint_ABL_Expert/-/archive/master/Octoprint_ABL_Expert-master.zip" \ 
     "https://github.com/jneilliii/OctoPrint-BLTouch/archive/master.zip" \ "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/master.zip" \ 
-    "https://github.com/FormerLurker/Octolapse/archive/v0.4.1rc1.zip"
+    "https://github.com/FormerLurker/Octolapse/archive/v0.4.1rc1.zip" \
+    "https://github.com/johnnyruz/OctoPrint-OctoVox/archive/0.1.6.zip"
 	
 # Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically
 # https://github.com/MatthewCroughan/octobalena/pull/10
