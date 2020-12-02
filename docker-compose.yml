@@ -11,6 +11,7 @@ services:
     privileged: true
     ports:
       - '5000:5000'
+      - '8080:8080'
     labels:
       io.balena.features.supervisor-api: '1'
       io.balena.features.balena-api: '1'
