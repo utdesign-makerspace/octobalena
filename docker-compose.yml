@@ -39,25 +39,25 @@ services:
      - UDEV=1
     depends_on:
      - octoprint
-  traefik:
-    restart: always
-    build: ./traefik
-    ports:
-      - '80:80/tcp'
-      - '443:443/tcp'
-      - '8080:8080'
-    volumes:
-      - 'traefik:/etc/traefik'
-    environment:
-      TRAEFIK_LOG_LEVEL: 'INFO'
-      TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS: ':443'
-      TRAEFIK_ENTRYPOINTS_WEB_ADDRESS: ':80'
-      TRAEFIK_PROVIDERS_DOCKER: 'true'
-      TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT: 'false'
-      TRAEFIK_PROVIDERS_DOCKER_ENDPOINT: 'unix:///var/run/balena.sock'
-      TRAEFIK_API_INSECURE: 'true'
-    labels:
-      io.balena.features.balena-socket: 'true'
+#  traefik:
+#    restart: always
+#    build: ./traefik
+#    ports:
+#      - '80:80/tcp'
+#      - '443:443/tcp'
+#      - '8080:8080'
+#    volumes:
+#      - 'traefik:/etc/traefik'
+#    environment:
+#      TRAEFIK_LOG_LEVEL: 'INFO'
+#      TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS: ':443'
+#      TRAEFIK_ENTRYPOINTS_WEB_ADDRESS: ':80'
+#      TRAEFIK_PROVIDERS_DOCKER: 'true'
+#      TRAEFIK_PROVIDERS_DOCKER_EXPOSEDBYDEFAULT: 'false'
+#      TRAEFIK_PROVIDERS_DOCKER_ENDPOINT: 'unix:///var/run/balena.sock'
+#      TRAEFIK_API_INSECURE: 'true'
+#    labels:
+#      io.balena.features.balena-socket: 'true'
   mdns-publisher:
     build: ./mdns-publisher
     environment:
