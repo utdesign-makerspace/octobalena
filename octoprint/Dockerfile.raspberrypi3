@@ -13,7 +13,9 @@ RUN PYTHONUSERBASE=/usr/local pip install OctoPrint
 # Install build deps for various plugins, Octolapse for example. Should find a way for these to be conditionally installed in the Future.
 RUN apk add --no-cache --virtual .build-deps \
     zlib-dev \
-    jpeg-dev 
+    jpeg-dev \
+    python-dev
+ 
 # Install PyBonjour and Zeroconf
 RUN pip install --no-cache-dir https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pybonjour/pybonjour-1.1.1.tar.gz zeroconf
 
@@ -35,7 +37,8 @@ RUN PYTHONUSERBASE=/usr/local pip install --no-cache-dir \
     "https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/master.zip" \
     "https://framagit.org/razer/Octoprint_ABL_Expert/-/archive/master/Octoprint_ABL_Expert-master.zip" \
     "https://github.com/jneilliii/OctoPrint-BLTouch/archive/master.zip" \
-    "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/master.zip"
+    "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/master.zip" \
+    "https://github.com/FormerLurker/Octolapse/archive/v0.4.1rc1.zip"
 
 # Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically
 # https://github.com/MatthewCroughan/octobalena/pull/10
