@@ -58,6 +58,23 @@ Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`OCTOPRINT_HOSTNAME`** | `STRING` | Adds CNAME for mDNS so device is reachable at string.local | octobalena
 
+## Plugin versions
+
+Plugin Name                           | Version
+--------------------------------------| -------
+OcroPrint Preheat                     |  v0.5.1
+OctoPrint-DisplayLayerProgress        |  v1.24.0
+OctoPrint-PSUControl                  |  v0.1.9
+OctoPrint-MQTT                        |  v0.8.7
+OctoPrint-FilamentManager             |  v1.6.3
+OctoPrint-PrintTimeGenius             |  v2.2.6
+OctoPrint-UltimakerFormatPackage      |  v0.2.1
+OctoPrint-Enclosure                   |  v4.12
+OctoPrint-BLTouch                     |  v0.3.4
+OctoPrint-BedLevelVisualizer          |  v1.0.0
+Octolapse                             |  v0.4.1rc1
+OctoPrint-OctoVox                     |  v0.1.6
+
 ## Attribution
 
 # **Octoprint by [Foosel](https://github.com/foosel/)**
