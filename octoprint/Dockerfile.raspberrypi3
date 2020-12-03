@@ -1,35 +1,44 @@
-FROM --platform=linux/arm/v7 nunofgs/octoprint:master-alpine
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
 
-# Install Raspberry Pi Libs and mDNS Prerequisites for PyBonjour
-RUN apk update && apk add --no-cache avahi-compat-libdns_sd raspberrypi && \
-    ln -s /opt/vc/bin/* /usr/bin/
+RUN cat /etc/apt/sources.list
 
-# Update OctoPrint
-RUN apk add --no-cache gcc linux-headers
-RUN PYTHONUSERBASE=/usr/local pip uninstall -y octoprint OctoPrint
-RUN rm -Rf /usr/local/lib/python2.7/site-packages/OctoPrint-*
-RUN PYTHONUSERBASE=/usr/local pip install OctoPrint
+# Install Dependencies
+RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
+                                       zlib1g-dev libjpeg-dev \
+                                       python3-dev \
+                                       python3-wheel  \
+                                       python3-pip \
+                                       fontconfig \
+                                       libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libavfilter-dev libswscale-dev libswresample-dev \
+                                       libsrtp2-dev libsrtp2-1 libopus-dev libvpx-dev \
+                                       pkg-config \
+                                       python-dev python3-dev \
+                                       gcc g++ linux-headers wget dosfstools
 
-# Install build deps for various plugins, Octolapse for example. Should find a way for these to be conditionally installed in the Future.
-RUN apk add --no-cache --virtual .build-deps \
-    zlib-dev jpeg-dev python-dev \
-    fontconfig \
-    libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libavfilter-dev \
-    libswscale-dev libswresample-dev libsrtp2-dev libsrtp2-1 libopus-dev libvpx-dev pkg-config
+# Can't seem to retrieve this from the package repo ???
+#RUN mkdir -p /boot/firmware \
+# && wget http://ftp.uk.debian.org/debian/pool/non-free/r/raspi3-firmware/raspi3-firmware_1.20190215-1+deb10u4_armhf.deb \
+# && dpkg -i raspi3-firmware_1.20190215-1+deb10u4_armhf.deb \
+# && rm raspi3-firmware_1.20190215-1+deb10u4_armhf.deb
+ 
+# TODO: Is this needed?
+#RUN ln -s /opt/vc/bin/* /usr/bin/
+
+# Update pip
+RUN pip3 install --upgrade pip
+
+# Install OctoPrint v1.5
+RUN pip3 install OctoPrint==1.5
 
 # Install PyBonjour and Zeroconf
-RUN pip install --no-cache-dir https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pybonjour/pybonjour-1.1.1.tar.gz zeroconf
+RUN pip3 install --no-cache-dir https://github.com/depl0y/pybonjour-python3/archive/master.zip zeroconf
 
 # Install Python dependencies for MattaCloud
-RUN pip install aiohttp==3.6.2 aiortc==0.9.7 numpy==1.19.1 opencv-python==4.4.0.40
+RUN pip3 install aiohttp aiortc numpy opencv-python
  
-# Install eudev so we can use udevd properly
-RUN apk update && apk add --no-cache eudev
-
 # OctoDash requirements, it is stated these plugins are mandatory on the project wiki:
 # https://github.com/UnchartedBull/OctoDash/wiki/Installation#automatic-installation
-
-RUN PYTHONUSERBASE=/usr/local pip install --no-cache-dir \ 
+RUN pip3 install --no-cache-dir \ 
     "https://github.com/marian42/octoprint-preheat/archive/0.5.1.zip" \ 
     "https://github.com/OllisGit/OctoPrint-DisplayLayerProgress/archive/1.24.0.zip" \ 
     "https://github.com/kantlivelong/OctoPrint-PSUControl/archive/0.1.9.zip" \ 
@@ -48,7 +57,7 @@ RUN PYTHONUSERBASE=/usr/local pip install --no-cache-dir \
 
 # Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically
 # https://github.com/MatthewCroughan/octobalena/pull/10
-RUN apk add --no-cache curl jq
+RUN install_packages curl jq
 COPY update-balena-app.sh /usr/src/octobalena/update-balena-app.sh
 
 # Seed the initial config.yaml 
