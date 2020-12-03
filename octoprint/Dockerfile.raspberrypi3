@@ -13,7 +13,8 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        libsrtp2-dev libsrtp2-1 libopus-dev libvpx-dev \
                                        pkg-config \
                                        python-dev python3-dev \
-                                       gcc g++ linux-headers wget dosfstools
+                                       gcc g++ linux-headers wget dosfstools \
+                                       supervisor
 
 # Can't seem to retrieve this from the package repo ???
 #RUN mkdir -p /boot/firmware \
