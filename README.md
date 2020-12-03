@@ -62,7 +62,7 @@ Variable Name | Value | Description | Default
 
 Plugin Name                           | Version
 --------------------------------------| -------
-OcroPrint Preheat                     |  v0.5.1
+OctoPrint Preheat                     |  v0.5.1
 OctoPrint-DisplayLayerProgress        |  v1.24.0
 OctoPrint-PSUControl                  |  v0.1.9
 OctoPrint-MQTT                        |  v0.8.7
@@ -74,6 +74,7 @@ OctoPrint-BLTouch                     |  v0.3.4
 OctoPrint-BedLevelVisualizer          |  v1.0.0
 Octolapse                             |  v0.4.1rc1
 OctoPrint-OctoVox                     |  v0.1.6
+MarlinGcodeDocumentation              |  v0.11.0
 
 ## Attribution
 

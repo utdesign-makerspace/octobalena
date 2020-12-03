@@ -39,7 +39,8 @@ RUN PYTHONUSERBASE=/usr/local pip install --no-cache-dir \
     "https://github.com/jneilliii/OctoPrint-BLTouch/archive/0.3.4.zip" \
     "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/1.0.0.zip" \
     "https://github.com/FormerLurker/Octolapse/archive/v0.4.1rc1.zip" \
-    "https://github.com/johnnyruz/OctoPrint-OctoVox/archive/0.1.6.zip"
+    "https://github.com/johnnyruz/OctoPrint-OctoVox/archive/0.1.6.zip" \
+    "https://github.com/costas-basdekis/MarlinGcodeDocumentation/archive/v0.11.0.zip"
 	
 # Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically
 # https://github.com/MatthewCroughan/octobalena/pull/10
