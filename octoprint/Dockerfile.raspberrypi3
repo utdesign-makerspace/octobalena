@@ -12,14 +12,17 @@ RUN PYTHONUSERBASE=/usr/local pip install OctoPrint
 
 # Install build deps for various plugins, Octolapse for example. Should find a way for these to be conditionally installed in the Future.
 RUN apk add --no-cache --virtual .build-deps \
-    zlib-dev \
-    jpeg-dev \
-    python-dev \
-    fontconfig
- 
+    zlib-dev jpeg-dev python-dev \
+    fontconfig \
+    libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libavfilter-dev \
+    libswscale-dev libswresample-dev libsrtp2-dev libsrtp2-1 libopus-dev libvpx-dev pkg-config
+
 # Install PyBonjour and Zeroconf
 RUN pip install --no-cache-dir https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/pybonjour/pybonjour-1.1.1.tar.gz zeroconf
 
+# Install Python dependencies for MattaCloud
+RUN pip install aiohttp==3.6.2 aiortc==0.9.7 numpy==1.19.1 opencv-python==4.4.0.40
+ 
 # Install eudev so we can use udevd properly
 RUN apk update && apk add --no-cache eudev
 
@@ -40,8 +43,9 @@ RUN PYTHONUSERBASE=/usr/local pip install --no-cache-dir \
     "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/1.0.0.zip" \
     "https://github.com/FormerLurker/Octolapse/archive/v0.4.1rc1.zip" \
     "https://github.com/johnnyruz/OctoPrint-OctoVox/archive/0.1.6.zip" \
-    "https://github.com/costas-basdekis/MarlinGcodeDocumentation/archive/v0.11.0.zip"
-	
+    "https://github.com/costas-basdekis/MarlinGcodeDocumentation/archive/v0.11.0.zip" \
+    "https://github.com/Mattalabs/OctoPrint-Mattacloud/archive/0.1.1.zip"
+
 # Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically
 # https://github.com/MatthewCroughan/octobalena/pull/10
 RUN apk add --no-cache curl jq

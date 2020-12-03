@@ -41,7 +41,7 @@ You can deploy this project to a new balenaCloud application in one click using 
 Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`CAMERA_DEV`** | `STRING` | The camera device node | /dev/video0
-**`MJPEG_STREAMER_AUTOSTART 	`** | `BOOLEAN` | Start the camera automatically  | true
+**`MJPEG_STREAMER_AUTOSTART`** | `BOOLEAN` | Start the camera automatically  | true
 **`MJPEG_STREAMER_INPUT`** | `STRING` | Flags to pass to mjpg_streamer | -y -n -r 640x480
 **`MQTT_BROKER`** | `STRING` | Ip address of mqtt broker to use | 
 **`MQTT_BROKER_PORT`** | `STRING` | Port the mqtt broker is running on | 
@@ -75,6 +75,8 @@ OctoPrint-BedLevelVisualizer          |  v1.0.0
 Octolapse                             |  v0.4.1rc1
 OctoPrint-OctoVox                     |  v0.1.6
 MarlinGcodeDocumentation              |  v0.11.0
+OctoPrint-Mattacloud                  |  v0.1.1
+
 
 ## Attribution
 
