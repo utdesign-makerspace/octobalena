@@ -59,6 +59,7 @@ RUN pip3 install --no-cache-dir \
 # https://github.com/MatthewCroughan/octobalena/pull/10
 RUN install_packages curl jq
 COPY update-balena-app.sh /usr/src/octobalena/update-balena-app.sh
+COPY start-mjpg-streamer.sh /usr/src/octobalena/start-mjpg-streamer.sh
 
 # Seed the initial config.yaml 
 COPY ./config.yaml /data/config.yaml
