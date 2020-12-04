@@ -15,16 +15,9 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        pkg-config \
                                        python-dev python3-dev \
                                        gcc g++ linux-headers wget dosfstools \
-                                       supervisor
-
-# Can't seem to retrieve this from the package repo ???
-#RUN mkdir -p /boot/firmware \
-# && wget http://ftp.uk.debian.org/debian/pool/non-free/r/raspi3-firmware/raspi3-firmware_1.20190215-1+deb10u4_armhf.deb \
-# && dpkg -i raspi3-firmware_1.20190215-1+deb10u4_armhf.deb \
-# && rm raspi3-firmware_1.20190215-1+deb10u4_armhf.deb
- 
-# TODO: Is this needed?
-#RUN ln -s /opt/vc/bin/* /usr/bin/
+                                       supervisor \
+                                       imagemagick libv4l-dev \
+                                       subversion
 
 # Update pip
 RUN pip3 install --upgrade pip
@@ -37,6 +30,15 @@ RUN pip3 install --no-cache-dir https://github.com/depl0y/pybonjour-python3/arch
 
 # Install Python dependencies for MattaCloud
 RUN pip3 install aiohttp aiortc numpy opencv-python
+
+# Build mjpg-streamer
+RUN ln -s /usr/include/linux/videodev2.h /usr/include/linux/videodev.h
+RUN svn co https://svn.code.sf.net/p/mjpg-streamer/code/mjpg-streamer/ mjpg-streamer
+RUN cd mjpg-streamer && make mjpg_streamer input_file.so input_uvc.so output_http.so \
+ && cp mjpg_streamer /usr/local/bin \
+ && cp output_http.so input_file.so input_uvc.so /usr/local/lib/ \
+ && cp -R www /usr/local/www \
+ && echo "export LD_LIBRARY_PATH=/usr/local/lib/" >> ~/.bashrc \
  
 # OctoDash requirements, it is stated these plugins are mandatory on the project wiki:
 # https://github.com/UnchartedBull/OctoDash/wiki/Installation#automatic-installation
