@@ -11,6 +11,7 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        fontconfig \
                                        libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libavfilter-dev libswscale-dev libswresample-dev \
                                        libsrtp2-dev libsrtp2-1 libopus-dev libvpx-dev \
+                                       ffmpeg \
                                        pkg-config \
                                        python-dev python3-dev \
                                        gcc g++ linux-headers wget dosfstools \
