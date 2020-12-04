@@ -1,7 +1,5 @@
 FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
 
-RUN cat /etc/apt/sources.list
-
 # Install Dependencies
 RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        zlib1g-dev libjpeg-dev \
