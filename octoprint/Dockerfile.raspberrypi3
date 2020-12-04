@@ -67,6 +67,9 @@ COPY ./config.yaml /data/config.yaml
 # Copy in the script that allows us to interface with espurna relays over mqtt
 COPY ./mqtt_espurna_control.py /usr/src/octobalena/mqtt_espurna_control.py
 
+# Add root user to video group to make vcgencmd work
+RUN usermod -aG video root
+
 COPY ./supervisord.conf /etc/supervisor/supervisord.conf
 COPY ./udevd.sh /app/udevd.sh
 
