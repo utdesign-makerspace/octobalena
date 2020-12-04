@@ -15,7 +15,6 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        pkg-config \
                                        python-dev python3-dev \
                                        gcc g++ linux-headers wget dosfstools \
-                                       supervisor \
                                        imagemagick libv4l-dev \
                                        git make cmake \
                                        haproxy dbus 
@@ -28,6 +27,9 @@ RUN pip3 install OctoPrint==1.5
 
 # Install PyBonjour and Zeroconf
 RUN pip3 install --no-cache-dir https://github.com/depl0y/pybonjour-python3/archive/master.zip zeroconf
+
+# Install supervisor
+RUN pip3 install supervisor
 
 # Install Python dependencies for MattaCloud
 RUN pip3 install aiohttp aiortc numpy opencv-python
