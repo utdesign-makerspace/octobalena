@@ -17,7 +17,8 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        gcc g++ linux-headers wget dosfstools \
                                        supervisor \
                                        imagemagick libv4l-dev \
-                                       make subversion
+                                       git make cmake \
+                                       haproxy dbus 
 
 # Update pip
 RUN pip3 install --upgrade pip
@@ -32,13 +33,10 @@ RUN pip3 install --no-cache-dir https://github.com/depl0y/pybonjour-python3/arch
 RUN pip3 install aiohttp aiortc numpy opencv-python
 
 # Build mjpg-streamer
-RUN ln -s /usr/include/linux/videodev2.h /usr/include/linux/videodev.h
-RUN svn co https://svn.code.sf.net/p/mjpg-streamer/code/mjpg-streamer/ mjpg-streamer
-RUN cd mjpg-streamer && make mjpg_streamer input_file.so input_uvc.so output_http.so \
- && cp mjpg_streamer /usr/local/bin \
- && cp output_http.so input_file.so input_uvc.so /usr/local/lib/ \
- && cp -R www /usr/local/www \
- && echo "export LD_LIBRARY_PATH=/usr/local/lib/" >> ~/.bashrc \
+#RUN ln -s /usr/include/linux/videodev2.h /usr/include/linux/videodev.h
+RUN git clone https://github.com/jacksonliam/mjpg-streamer.git && cd mjpg-streamer/mjpg-streamer-experimental \
+ && sed -i 's|#include <linux/stat.h>|//#include <linux/stat.h>|g' utils.c \
+ && make && make install
  
 # OctoDash requirements, it is stated these plugins are mandatory on the project wiki:
 # https://github.com/UnchartedBull/OctoDash/wiki/Installation#automatic-installation
@@ -51,7 +49,6 @@ RUN pip3 install --no-cache-dir \
     "https://github.com/eyal0/OctoPrint-PrintTimeGenius/archive/2.2.6.zip" \
     "https://github.com/jneilliii/OctoPrint-UltimakerFormatPackage/archive/0.2.1.zip" \
     "https://github.com/jneilliii/OctoPrint-PrusaSlicerThumbnails/archive/master.zip" \ 
-    "https://github.com/vitormhenrique/OctoPrint-Enclosure/archive/4.12.zip" \
     "https://github.com/jneilliii/OctoPrint-BLTouch/archive/0.3.4.zip" \
     "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer/archive/1.0.0.zip" \
     "https://github.com/FormerLurker/Octolapse/archive/v0.4.1rc1.zip" \
@@ -75,5 +72,6 @@ RUN usermod -aG video root
 
 COPY ./supervisord.conf /etc/supervisor/supervisord.conf
 COPY ./udevd.sh /app/udevd.sh
+COPY ./haproxy.cfg /etc/haproxy/haproxy.cfg
 
 CMD ["/app/udevd.sh"]
