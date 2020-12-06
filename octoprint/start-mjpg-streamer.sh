@@ -1,3 +1,4 @@
+#!/bin/sh
 
 # TODO: Add in some configuration options?
 export LD_LIBRARY_PATH=/usr/local/lib/mjpg-streamer
