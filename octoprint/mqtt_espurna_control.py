@@ -1,10 +1,12 @@
+#!/usr/bin/env python3
+
 import paho.mqtt.client as paho
 import os
 import sys
 
 # Use environment variables from the Balena dashboard or any other source to inform the script.
 broker = os.environ["MQTT_BROKER"]
-port = os.environ["MQTT_BROKER_PORT"]
+port = int(os.environ["MQTT_BROKER_PORT"])
 espurna_name = os.environ["ESPURNA_RELAY_NAME"]
 # Create client object
 client = paho.Client("Octobalena")
