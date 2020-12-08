@@ -8,6 +8,7 @@
             "name": "",
             "xySpeed": 100,
             "zSpeed": 5,
+            "zBabystepGCode": "M290 Z",
             "defaultTemperatureFanSpeed": {
                 "hotend": 200,
                 "heatbed": 60,
@@ -15,19 +16,20 @@
             }
         },
         "filament": {
-            "density": 0,
-            "thickness": 0,
-            "feedLength": 470,
-            "feedSpeed": 30,
+            "density": 1.25,
+            "thickness": 1.75,
+            "feedLength": 0,
+            "feedSpeed": 20,
             "feedSpeedSlow": 3,
-            "purgeDistance": 30
+            "purgeDistance": 30,
+            "useM600": false
         },
         "plugins": {
             "displayLayerProgress": {
                 "enabled": true
             },
             "enclosure": {
-                "enabled": true,
+                "enabled": false,
                 "ambientSensorID": null,
                 "filament1SensorID": null,
                 "filament2SensorID": null
@@ -52,14 +54,14 @@
                     "command": "G28",
                     "color": "#dcdde1",
                     "confirm": false,
-                    "exit": false
+                    "exit": true
                 },
                 {
                     "icon": "ruler-vertical",
                     "command": "G29",
                     "color": "#44bd32",
                     "confirm": false,
-                    "exit": false
+                    "exit": true
                 },
                 {
                     "icon": "fire-alt",
@@ -96,7 +98,9 @@
             },
             "pollingInterval": 2000,
             "touchscreen": true,
-            "turnScreenOffWhileSleeping": false
+            "turnScreenOffWhileSleeping": false,
+            "preferPreviewWhilePrinting": false,
+            "previewProgressCircle": false
         }
     }
 }
