@@ -72,7 +72,7 @@ OctoPrint-UltimakerFormatPackage      |  v0.2.1
 OctoPrint-Enclosure                   |  v4.12
 OctoPrint-BLTouch                     |  v0.3.4
 OctoPrint-BedLevelVisualizer          |  v1.0.0
-Octolapse                             |  v0.4.1rc1
+Octolapse                             |  v0.4.1
 OctoPrint-OctoVox                     |  v0.1.6
 MarlinGcodeDocumentation              |  v0.11.0
 OctoPrint-Mattacloud                  |  v0.1.1
