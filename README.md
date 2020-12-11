@@ -71,7 +71,7 @@ OctoPrint-DisplayLayerProgress        |  v1.24.0
 OctoPrint-PSUControl                  |  v0.1.9
 OctoPrint-MQTT                        |  v0.8.7
 OctoPrint-FilamentManager             |  v1.6.3
-OctoPrint-PrintTimeGenius             |  v2.2.6
+OctoPrint-PrintTimeGenius             |  v2.2.7
 OctoPrint-UltimakerFormatPackage      |  v0.2.1
 OctoPrint-Enclosure                   |  v4.12
 OctoPrint-BLTouch                     |  v0.3.4
