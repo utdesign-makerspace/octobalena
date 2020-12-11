@@ -21,8 +21,8 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
 # Update pip
 RUN pip3 install --upgrade pip
 
-# Install OctoPrint v1.5.1
-RUN pip3 install OctoPrint==1.5.1
+# Install OctoPrint v1.5.2
+RUN pip3 install OctoPrint==1.5.2
 
 # Install PyBonjour and Zeroconf
 RUN pip3 install --no-cache-dir https://github.com/depl0y/pybonjour-python3/archive/master.zip zeroconf

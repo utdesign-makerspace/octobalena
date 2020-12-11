@@ -58,6 +58,10 @@ Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`OCTOPRINT_HOSTNAME`** | `STRING` | Adds CNAME for mDNS so device is reachable at string.local | octobalena
 
+## Octoprint Version
+
+v1.5.2
+
 ## Plugin versions
 
 Plugin Name                           | Version
