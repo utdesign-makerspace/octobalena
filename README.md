@@ -68,7 +68,7 @@ Plugin Name                           | Version
 --------------------------------------| -------
 OctoPrint Preheat                     |  v0.5.1
 OctoPrint-DisplayLayerProgress        |  v1.24.0
-OctoPrint-PSUControl                  |  v0.1.9
+OctoPrint-PSUControl                  |  v0.1.10
 OctoPrint-MQTT                        |  v0.8.7
 OctoPrint-FilamentManager             |  v1.6.3
 OctoPrint-PrintTimeGenius             |  v2.2.7
