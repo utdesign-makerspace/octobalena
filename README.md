@@ -41,7 +41,7 @@ You can deploy this project to a new balenaCloud application in one click using 
 Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`CAMERA_DEV`** | `STRING` | The camera device node | /dev/video0
-**`MJPEG_STREAMER_AUTOSTART 	`** | `BOOLEAN` | Start the camera automatically  | true
+**`MJPEG_STREAMER_AUTOSTART`** | `BOOLEAN` | Start the camera automatically  | true
 **`MJPEG_STREAMER_INPUT`** | `STRING` | Flags to pass to mjpg_streamer | -y -n -r 640x480
 **`MQTT_BROKER`** | `STRING` | Ip address of mqtt broker to use | 
 **`MQTT_BROKER_PORT`** | `STRING` | Port the mqtt broker is running on | 
@@ -57,6 +57,30 @@ Variable Name | Value | Description | Default
 Variable Name | Value | Description | Default
 ------------ | ------------- | ------------- | -------------
 **`OCTOPRINT_HOSTNAME`** | `STRING` | Adds CNAME for mDNS so device is reachable at string.local | octobalena
+
+## Octoprint Version
+
+v1.5.2
+
+## Plugin versions
+
+Plugin Name                           | Version
+--------------------------------------| -------
+OctoPrint Preheat                     |  v0.5.1
+OctoPrint-DisplayLayerProgress        |  v1.24.0
+OctoPrint-PSUControl                  |  v0.1.10
+OctoPrint-MQTT                        |  v0.8.7
+OctoPrint-FilamentManager             |  v1.6.3
+OctoPrint-PrintTimeGenius             |  v2.2.7
+OctoPrint-UltimakerFormatPackage      |  v0.2.1
+OctoPrint-Enclosure                   |  v4.12
+OctoPrint-BLTouch                     |  v0.3.4
+OctoPrint-BedLevelVisualizer          |  v1.0.0
+Octolapse                             |  v0.4.1
+OctoPrint-OctoVox                     |  v0.1.6
+MarlinGcodeDocumentation              |  v0.11.0
+OctoPrint-Mattacloud                  |  v0.1.1
+
 
 ## Attribution
 

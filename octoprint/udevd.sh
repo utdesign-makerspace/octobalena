@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This command only works in privileged container
 tmp_mount='/tmp/_balena'

@@ -14,7 +14,7 @@ do
     sleep $SLEEP_FOR
 
     SLEEP_FOR=5
-    OCTOPRINT_API_KEY="$(cat ~/.octoprint/config.yaml | grep key: | awk 'BEGIN {OFS = ":"} { print $2 }')"
+    OCTOPRINT_API_KEY="$(cat /data/config.yaml | grep key: | awk 'BEGIN {OFS = ":"} { print $2 }')"
 done
 
 
