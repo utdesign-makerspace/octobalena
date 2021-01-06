@@ -25,7 +25,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install OctoPrint==1.5.2
 
 # Install PyBonjour and Zeroconf
-RUN pip3 install --no-cache-dir https://github.com/depl0y/pybonjour-python3/archive/master.zip zeroconf
+RUN pip install --no-cache-dir https://github.com/DynamicDevices/pybonjour-python3/archive/master.zip zeroconf
 
 # Install supervisor
 RUN pip3 install supervisor
