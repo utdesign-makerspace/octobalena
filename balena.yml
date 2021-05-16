@@ -1,3 +1,4 @@
+version: "2"
 name: "Octobalena"
 description: "Remotely control your 3D printer with octoprint, octodash, and balena."
 type: "sw.application"
