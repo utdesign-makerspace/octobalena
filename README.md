@@ -60,26 +60,24 @@ Variable Name | Value | Description | Default
 
 ## Octoprint Version
 
-v1.5.2
+v1.5.3
 
 ## Plugin versions
 
 Plugin Name                           | Version
 --------------------------------------| -------
-OctoPrint Preheat                     |  v0.5.1
-OctoPrint-DisplayLayerProgress        |  v1.24.0
-OctoPrint-PSUControl                  |  v0.1.10
+OctoPrint Preheat                     |  v0.6.0
+OctoPrint-DisplayLayerProgress        |  v1.25.4
+OctoPrint-PSUControl                  |  v0.1.11
 OctoPrint-MQTT                        |  v0.8.7
-OctoPrint-FilamentManager             |  v1.6.3
+OctoPrint-FilamentManager             |  v1.7.2
 OctoPrint-PrintTimeGenius             |  v2.2.7
-OctoPrint-UltimakerFormatPackage      |  v0.2.1
-OctoPrint-Enclosure                   |  v4.12
+OctoPrint-UltimakerFormatPackage      |  v0.2.2
 OctoPrint-BLTouch                     |  v0.3.4
 OctoPrint-BedLevelVisualizer          |  v1.0.0
 Octolapse                             |  v0.4.1
 OctoPrint-OctoVox                     |  v0.1.6
-MarlinGcodeDocumentation              |  v0.11.0
-OctoPrint-Mattacloud                  |  v0.1.1
+MarlinGcodeDocumentation              |  v0.12.0
 
 
 ## Attribution
