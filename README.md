@@ -78,7 +78,7 @@ OctoPrint-BedLevelVisualizer          |  v1.0.0
 Octolapse                             |  v0.4.1
 OctoPrint-OctoVox                     |  v0.1.6
 MarlinGcodeDocumentation              |  v0.12.0
-
+OctoPrint-FirmwareUpdater-1.11.0      |  v1.11.0
 
 ## Attribution
 
