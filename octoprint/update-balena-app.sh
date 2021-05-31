@@ -8,13 +8,13 @@ if [ -z $BALENA_API_KEY ]; then
 fi
 
 SLEEP_FOR=1
-while [ -z $OCTOPRINT_API_KEY ]
+while [ -z $OCTOPRINT_APIKEY ]
 do
     echo "OctoPrint API Key not set. Sleeping ${SLEEP_FOR}s..."
     sleep $SLEEP_FOR
 
     SLEEP_FOR=5
-    OCTOPRINT_API_KEY="$(cat /data/config.yaml | grep key: | awk 'BEGIN {OFS = ":"} { print $2 }')"
+    OCTOPRINT_APIKEY="$(cat /data/config.yaml | grep key: | awk 'BEGIN {OFS = ":"} { print $2 }')"
 done
 
 
@@ -29,7 +29,7 @@ create_api_key() {
         --header 'Accept: application/json' \
         --header "Authorization: Bearer ${BALENA_API_KEY}" \
         --header "Content-Type: application/json" \
-        --data-raw '{"service_install":'$OCTODASH_SI', "name":"OCTOPRINT_APIKEY", "value":"'$OCTOPRINT_API_KEY'"}' \
+        --data-raw '{"service_install":'$OCTODASH_SI', "name":"OCTOPRINT_APIKEY", "value":"'$OCTOPRINT_APIKEY'"}' \
         --request POST \
         https://api.balena-cloud.com/v5/device_service_environment_variable
 }
@@ -39,7 +39,7 @@ patch_api_key() {
         --header 'Accept: application/json' \
         --header "Authorization: Bearer ${BALENA_API_KEY}" \
         --header "Content-Type: application/json" \
-        --data-raw '{"value":"'$OCTOPRINT_API_KEY'"}' \
+        --data-raw '{"value":"'$OCTOPRINT_APIKEY'"}' \
         --request PATCH \
         'https://api.balena-cloud.com/v5/device_service_environment_variable?$top=1&$filter=service_install%20eq%20'$OCTODASH_SI'%20and%20name%20eq%20%27OCTOPRINT_APIKEY%27'
 }
