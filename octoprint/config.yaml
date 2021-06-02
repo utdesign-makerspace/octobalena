@@ -1,6 +1,8 @@
 server:
   commands:
     serverRestartCommand: killall -15 supervisord
+    systemRestartCommand: curl -s -XPOST -H "Content-Type:application/json" "$BALENA_SUPERVISOR_ADDRESS/v1/reboot?apikey=$BALENA_SUPERVISOR_API_KEY"
+    systemShutdownCommand: curl -s -XPOST -H "Content-Type:application/json" "$BALENA_SUPERVISOR_ADDRESS/v1/shutdown?apikey=$BALENA_SUPERVISOR_API_KEY"
 webcam:
   stream: /webcam/?action=stream
   snapshot: http://127.0.0.1:8080/?action=snapshot
@@ -13,10 +15,10 @@ plugins:
     showOnBrowserTitle: false
     showOnNavBar: false
     showOnPrinterDisplay: false
-  announcements:                                                                                                                                                                                                                                                                                                         
-    _config_version: 1                                                                                                                                                                                                                                                                                                 
-    enabled_channels:                                                                                                                                                                                                                                                                                                  
-    - _important         
+  announcements:
+    _config_version: 1
+    enabled_channels:
+      - _important
   mqtt:
     broker:
       url:
@@ -26,7 +28,7 @@ plugins:
     offSysCommand: python3 /usr/src/octobalena/mqtt_espurna_control.py off
     onSysCommand: python3 /usr/src/octobalena/mqtt_espurna_control.py on
     switchingMethod: SYSTEM
-serial:                                                                                                                                 
-  autoconnect: true                                                                                                                     
-  baudrate: 0                                                                                                                           
+serial:
+  autoconnect: true
+  baudrate: 0
   port: AUTO
