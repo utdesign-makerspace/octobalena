@@ -21,7 +21,7 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        avrdude \
                                        libssl-dev libffi-dev \
                                        libraspberrypi-bin \
-                                       curl jq
+                                       curl jq psmisc
 
 # Update pip
 RUN pip3 install --upgrade pip
