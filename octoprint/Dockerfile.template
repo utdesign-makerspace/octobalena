@@ -4,6 +4,7 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:buster
 RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        zlib1g-dev libjpeg-dev \
                                        python3-dev \
+                                       python2.7-dev \
                                        python3-wheel  \
                                        python3-pip \
                                        python3-setuptools \
@@ -21,7 +22,16 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
                                        avrdude \
                                        libssl-dev libffi-dev \
                                        libraspberrypi-bin \
-                                       curl jq psmisc
+                                       curl jq psmisc \
+                                       build-essential \
+                                       libldap2-dev \
+                                       libsasl2-dev \
+                                       slapd \ 
+                                       ldap-utils \ 
+                                       python-tox \
+                                       lcov \
+                                       valgrind
+
 
 # Update pip
 RUN pip3 install --upgrade pip
@@ -62,7 +72,8 @@ RUN pip3 install --no-cache-dir \
     "https://github.com/FormerLurker/Octolapse/archive/v0.4.1.zip" \
     "https://github.com/johnnyruz/OctoPrint-OctoVox/archive/0.1.6.zip" \
     "https://github.com/costas-basdekis/MarlinGcodeDocumentation/archive/v0.12.0.zip" \
-    "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/1.11.0.zip"
+    "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/1.11.0.zip" \ 
+    "https://github.com/battis/OctoPrint-LDAP/archive/master.zip"
 
 # Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically
 # https://github.com/MatthewCroughan/octobalena/pull/10
