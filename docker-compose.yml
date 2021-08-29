@@ -15,14 +15,6 @@ services:
     labels:
       io.balena.features.supervisor-api: '1'
       io.balena.features.balena-api: '1'
-  octodash:
-    restart: always
-    build: ./octodash
-    privileged: true
-    environment:
-     - UDEV=1
-    depends_on:
-     - octoprint
   mdns-publisher:
     build: ./mdns-publisher
     environment:
