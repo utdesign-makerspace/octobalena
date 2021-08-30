@@ -34,7 +34,7 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
 RUN pip3 install --upgrade pip
 
 # Install OctoPrint v1.6.1
-RUN pip3 install OctoPrint==1.6.1
+RUN pip3 install OctoPrint
 
 # Install PyBonjour and Zeroconf
 RUN pip install --no-cache-dir https://github.com/DynamicDevices/pybonjour-python3/archive/master.zip zeroconf
@@ -57,9 +57,9 @@ RUN git clone https://github.com/jacksonliam/mjpg-streamer.git && cd mjpg-stream
 # OctoDash requirements, it is stated these plugins are mandatory on the project wiki:
 # https://github.com/UnchartedBull/OctoDash/wiki/Installation#automatic-installation
 RUN pip3 install --no-cache-dir \ 
-    "https://github.com/johnnyruz/OctoPrint-OctoVox/archive/0.1.6.zip" \
-    "https://github.com/costas-basdekis/MarlinGcodeDocumentation/archive/v0.12.0.zip" \
-    "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/1.11.0.zip" \ 
+    #"https://github.com/johnnyruz/OctoPrint-OctoVox/archive/0.1.6.zip" \
+    #"https://github.com/costas-basdekis/MarlinGcodeDocumentation/archive/v0.12.0.zip" \
+    #"https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/1.11.0.zip" \ 
     "https://github.com/battis/OctoPrint-LDAP/archive/master.zip" 
 #"https://github.com/markwal/OctoPrint-GPX/archive/master.zip"
 
