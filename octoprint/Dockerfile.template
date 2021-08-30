@@ -26,10 +26,7 @@ RUN apt-get update && install_packages libavahi-compat-libdnssd1 \
     build-essential \
     libldap2-dev \
     libsasl2-dev \
-    slapd \ 
-    ldap-utils \ 
-    python-tox \
-    lcov \
+    slapd \
     valgrind
 
 
