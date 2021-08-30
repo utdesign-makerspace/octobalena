@@ -60,8 +60,8 @@ RUN pip3 install --no-cache-dir \
     "https://github.com/johnnyruz/OctoPrint-OctoVox/archive/0.1.6.zip" \
     "https://github.com/costas-basdekis/MarlinGcodeDocumentation/archive/v0.12.0.zip" \
     "https://github.com/OctoPrint/OctoPrint-FirmwareUpdater/archive/1.11.0.zip" \ 
-    "https://github.com/battis/OctoPrint-LDAP/archive/master.zip" \
-    "https://github.com/markwal/OctoPrint-GPX/archive/master.zip"
+    "https://github.com/battis/OctoPrint-LDAP/archive/master.zip" 
+#"https://github.com/markwal/OctoPrint-GPX/archive/master.zip"
 
 # Adds support for obtaining OCTOPRINT_APIKEY and setting the octodash service variable automatically
 # https://github.com/MatthewCroughan/octobalena/pull/10
