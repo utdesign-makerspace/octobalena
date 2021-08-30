@@ -9,11 +9,11 @@ webcam:
   ffmpeg: /usr/bin/ffmpeg
 plugins:
   auth_ldap:
-    uri: ""
-    auth_user: "" 
-    auth_password: "" 
-    search_base: dc=utdmaker,dc=space
-    ou: Members
+    uri: 
+    auth_user: 
+    auth_password: 
+    search_base: 
+    ou: 
   DisplayLayerProgress:
     showAllPrinterMessages: false
     showHeightInStatusBar: false
@@ -41,5 +41,5 @@ serial:
 api:
   enabled: true
 apperance:
-  name: "Printer"
-  color: default
+  name: 
+  color: 
