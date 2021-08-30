@@ -13,6 +13,7 @@ with open('./config.yaml', 'r+') as f:
     data["plugins"]["auth_ldap"]["ou"] = os.environ["LDAP_OU"]
     data["apperance"]["name"] = os.environ["PRINTER_NAME"]
     data["apperance"]["color"] = os.environ["PRINTER_COLOR"]
+    
     f.seek(0)
     f.write(yaml.dump(data, default_flow_style=False))
     f.truncate()
